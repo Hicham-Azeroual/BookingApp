@@ -18,7 +18,7 @@ import java.util.List;
 public class User implements UserDetails {
 
     public User() {
-        this.role = "ROLE_USER";
+        this.role = "USER";
     }
 
     @Id
@@ -90,6 +90,54 @@ public class User implements UserDetails {
        public Long getId() {
           return id;
        }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public void setPassword(@NotBlank(message = "Password is required") String password) {
+        this.password = password;
+    }
+
+    public @NotBlank(message = "Name is required") String getName() {
+        return name;
+    }
+
+    public void setName(@NotBlank(message = "Name is required") String name) {
+        this.name = name;
+    }
+
+    public @Pattern(regexp = "^[+]?[0-9]{10,15}$", message = "Phone number should be valid") @NotBlank(message = "Phone Number is required") String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(@Pattern(regexp = "^[+]?[0-9]{10,15}$", message = "Phone number should be valid") @NotBlank(message = "Phone Number is required") String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public @Email(message = "Email should be valid") @NotBlank(message = "Email is required") String getEmail() {
+        return email;
+    }
+
+    public void setEmail(@Email(message = "Email should be valid") @NotBlank(message = "Email is required") String email) {
+        this.email = email;
+    }
 
     @Override
     public String toString() {
