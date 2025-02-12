@@ -13,10 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class UserService implements UserInterfaceService {
 
     @Autowired
@@ -29,6 +30,16 @@ public class UserService implements UserInterfaceService {
     private AuthenticationManager authenticationManager;
 
 
+<<<<<<<<<<<<<<  ✨ Codeium Command ⭐ >>>>>>>>>>>>>>>>
+    /**
+     * Register a new user to the system.
+     *
+     * @param user the user to be registered
+     * @return a response with the newly registered user
+     *
+     * @throws OurException if the user already exists
+     */
+<<<<<<<  128ff140-fa4d-4318-8b0e-33ca1f4a3d85  >>>>>>>
     @Override
     public Response registre(User user) {
         Response response = new Response();
