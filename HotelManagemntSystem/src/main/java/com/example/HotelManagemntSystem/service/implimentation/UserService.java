@@ -30,16 +30,7 @@ public class UserService implements UserInterfaceService {
     private AuthenticationManager authenticationManager;
 
 
-<<<<<<<<<<<<<<  ✨ Codeium Command ⭐ >>>>>>>>>>>>>>>>
-    /**
-     * Register a new user to the system.
-     *
-     * @param user the user to be registered
-     * @return a response with the newly registered user
-     *
-     * @throws OurException if the user already exists
-     */
-<<<<<<<  128ff140-fa4d-4318-8b0e-33ca1f4a3d85  >>>>>>>
+
     @Override
     public Response registre(User user) {
         Response response = new Response();
@@ -47,12 +38,14 @@ public class UserService implements UserInterfaceService {
              if(user.getRole()==null || user.getRole().isBlank() ){
                  user.setRole("USER");
              }
+
              if (userRepository.existsByEmail(user.getEmail())) {
                  throw new OurException("User with email " + user.getEmail() + " already exists!");
              }
              user.setPassword(passwordEncoder.encode(user.getPassword()));
              User savedUser = userRepository.save(user);
              UserDTO userDTO = Utils.mapUserEntityToUserDTO(savedUser);
+             System.out.println(userDTO+" userDTO");
              response.setUser(userDTO);
              response.setStatusCode(200);
         } catch (OurException e) {
