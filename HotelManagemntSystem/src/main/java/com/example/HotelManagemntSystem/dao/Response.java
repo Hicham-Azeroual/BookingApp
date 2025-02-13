@@ -73,4 +73,66 @@ public class Response {
     public int getStatusCode() {
         return statusCode;
     }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public List<BookingDTO> getBookingList() {
+        return bookingList;
+    }
+
+    public List<RoomDTO> getRoomList() {
+        return roomList;
+    }
+
+    public List<UserDTO> getUserList() {
+        return userList;
+    }
+
+    public BookingDTO getBooking() {
+        return booking;
+    }
+
+    public RoomDTO getRoom() {
+        return room;
+    }
+
+    public UserDTO getUser() {
+        return user;
+    }
+
+    public String getBookingConfirmationCode() {
+        return bookingConfirmationCode;
+    }
+
+    public String getExpirationTime() {
+        return expirationTime;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    @Override
+    public String toString() {
+        return "Response{" +
+                "statusCode=" + statusCode +
+                ", message='" + message + '\'' +
+                ", token='" + token + '\'' +
+                ", role='" + role + '\'' +
+                ", expirationTime='" + expirationTime + '\'' +
+                ", bookingConfirmationCode='" + bookingConfirmationCode + '\'' +
+                ", user=" + user +
+                ", room=" + room +
+                ", booking=" + booking +
+                ", userList=" + userList +
+                ", roomList=" + roomList +
+                ", bookingList=" + bookingList +
+                '}';
+    }
 }

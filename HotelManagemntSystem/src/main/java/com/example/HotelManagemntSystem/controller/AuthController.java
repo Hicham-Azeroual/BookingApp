@@ -20,8 +20,8 @@ public class AuthController {
     @PostMapping("/register")
 
     public ResponseEntity<Response> register(@RequestBody User user) {
-        System.out.println(user);
         Response response = userService.registre(user);
+        System.out.println(response);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
     @PostMapping("/login")

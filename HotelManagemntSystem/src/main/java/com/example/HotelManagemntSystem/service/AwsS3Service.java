@@ -46,6 +46,7 @@ public class AwsS3Service {
 
             PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, s3Filename, inputStream, metadata);
             s3Client.putObject(putObjectRequest);
+            System.out.println("----Image uploaded successfully to s3 bucket -----"+"https://" + bucketName + ".s3.amazonaws.com/" + s3Filename);
             return "https://" + bucketName + ".s3.amazonaws.com/" + s3Filename;
 
         } catch (Exception e) {

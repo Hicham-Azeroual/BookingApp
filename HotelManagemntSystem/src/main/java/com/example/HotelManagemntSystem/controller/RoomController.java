@@ -34,13 +34,14 @@ public class RoomController {
             @RequestParam(value = "roomDescription", required = false) String roomDescription
     ) {
 
-        if (photo == null || photo.isEmpty() || roomType == null || roomType.isBlank() || roomPrice == null || roomType.isBlank()) {
+        if (photo == null || photo.isEmpty() || roomType == null ||  roomPrice == null || roomType.isBlank()) {
             Response response = new Response();
             response.setStatusCode(400);
             response.setMessage("Please provide values for all fields(photo, roomType,roomPrice)");
             return ResponseEntity.status(response.getStatusCode()).body(response);
         }
         Response response = roomService.addNewRoom(photo, roomType, roomPrice, roomDescription);
+        System.out.println("Response"+response);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
 

@@ -36,11 +36,13 @@ public class RoomService implements RoomInterfaceService {
         Response response = new Response();
         try{
             String imageUrl= awsS3Service.saveImageToS3(photo);
+            System.out.println("image url" +imageUrl);
             Room room=new Room();
             room.setRoomType(roomType);
             room.setRoomPrice(roomPrice);
             room.setRoomDescription(description);
             room.setRoomPhotoUrl(imageUrl);
+            System.out.println("Room"+room);
             Room savedRoom=roomRepository.save(room);
             RoomDTO roomDTO= Utils.mapRoomEntityToRoomDTO(savedRoom);
             response.setStatusCode(200);

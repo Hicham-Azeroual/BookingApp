@@ -36,6 +36,8 @@ public class Utils {
         userDTO.setEmail(user.getEmail());
         userDTO.setPhoneNumber(user.getPhoneNumber());
         userDTO.setRole(String.valueOf(user.getRole()));
+        System.out.println(userDTO);
+        System.out.print("----------------------------");
         return userDTO;
     }
 
